@@ -18,7 +18,7 @@ module "project_ci_vm" {
   source  = "terraform-google-modules/project-factory/google"
   version = "~> 3.0"
 
-  name              = "ci-vm-module"
+  name              = "ci-vm-module-11"
   random_project_id = true
   org_id            = var.org_id
   folder_id         = var.folder_id

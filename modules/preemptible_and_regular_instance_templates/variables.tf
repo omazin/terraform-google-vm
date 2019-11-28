@@ -139,14 +139,12 @@ variable "service_account" {
 ###########################
 # Public IP
 ###########################
-variable "public_ip" {
-  description = "Determines whether a public IP address is added to your VM instance."
-  type        = bool
-  default     = false
-}
-
 variable "access_config" {
   description = "Access configurations, i.e. IPs via which the VM instance can be accessed via the Internet."
-  type        = map(string)
-  default     = {}
+  type        = list(object({
+    nat_ip                 = string
+    public_ptr_domain_name = string
+    network_tier           = string
+  }))
+  default = []
 }

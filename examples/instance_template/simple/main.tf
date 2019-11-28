@@ -40,7 +40,6 @@ module "instance_template" {
   name_prefix     = "simple"
   tags            = var.tags
   labels          = var.labels
-  public_ip       = true
-  access_config   = local.access_config
+  access_config   = [local.access_config]
 }
 
